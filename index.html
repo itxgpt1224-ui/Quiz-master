@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#14213d"><meta name="description" content="Turn PDF MCQs into interactive quizzes">
+<link rel="manifest" href="manifest.json"><link rel="stylesheet" href="style.css">
+<title>PDF MCQ Quiz Maker</title>
+</head>
+<body>
+<header><div class="brand">📘 PDF MCQ Quiz Maker</div><div class="sub">Upload · Extract · Review · Practice</div></header>
+<main>
+<section class="panel" id="uploadPanel">
+<h1>Make a quiz from your PDF</h1>
+<p>Select a PDF containing MCQs and an answer key. Your file is processed in this browser.</p>
+<label class="file-label" for="pdfFile">Choose PDF</label><input id="pdfFile" type="file" accept="application/pdf">
+<div id="fileName" class="muted">No PDF selected</div>
+<button id="scanBtn" disabled>Scan PDF</button>
+<div id="progress" class="muted" aria-live="polite"></div>
+<p class="hint">Scanned/image PDFs may take longer. OCR requires an internet connection on first load.</p>
+</section>
+<section class="panel hidden" id="reviewPanel">
+<div class="row between"><h2>Review extracted questions</h2><span id="count" class="pill"></span></div>
+<p class="hint">Check the extracted wording and correct answers before starting. Edit any field if needed.</p>
+<div id="reviewList"></div>
+<button id="startBtn">Start quiz</button>
+<button class="secondary" id="backBtn">Choose another PDF</button>
+</section>
+<section class="panel hidden" id="quizPanel">
+<div class="row between"><span id="qProgress" class="pill"></span><span id="scoreLive" class="muted"></span></div>
+<div class="progressbar"><div id="progressBar"></div></div>
+<h2 id="questionText"></h2>
+<div id="options"></div>
+<div id="feedback" aria-live="polite"></div>
+<div class="row between"><button class="secondary" id="prevBtn">Previous</button><button id="nextBtn">Next</button></div>
+</section>
+<section class="panel hidden" id="resultPanel">
+<h2>Quiz result</h2><div id="resultText"></div>
+<button id="restartBtn">Review answers</button><button class="secondary" id="newPdfBtn">Upload another PDF</button>
+</section>
+</main>
+<footer>Works in your browser. Keep your original PDF as the source of truth.</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+<script src="app.js"></script>
+</body></html>
