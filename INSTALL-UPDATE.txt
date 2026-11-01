@@ -1,0 +1,4 @@
+PWA INSTALL UPDATE
+Extract this ZIP on your phone. Upload/replace ALL files inside this folder in the ROOT of your existing GitHub repository. All files are in one folder; do not upload the ZIP as a single file.
+Then wait for GitHub Pages deployment to finish and reload the Pages URL in Chrome.
+If Chrome still shows the old install state, remove the old shortcut, clear site data for itxgpt1224-ui.github.io in Chrome site settings, reload, then use Chrome menu > Install app.
